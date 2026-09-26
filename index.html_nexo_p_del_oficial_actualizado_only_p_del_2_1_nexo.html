@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Nexo Pádel Oficial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#d4af37',
+              goldLight: '#f3e5ab',
+              goldDark: '#aa820a',
+              dark: '#0e0e0e',
+              card: '#181717',
+              cardBorder: '#282727',
+              volt: '#ccff00',
+              whatsapp: '#25D366'
+            }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #f3f3f3;
+      font-family: 'Montserrat', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+    }
+    .gold-text-gradient {
+      background: linear-gradient(135deg, #ffffff 20%, #d4af37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tab-btn.active {
+      background: #d4af37;
+      color: #000000;
+      font-weight: 800;
+    }
+    .nav-item.active {
+      color: #d4af37;
+    }
+    .nav-item.active i {
+      color: #d4af37;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-black pb-28">
+
+  <!-- TOP APP BAR -->
+  <header class="sticky top-0 z-40 bg-[#121212]/95 backdrop-blur-md border-b border-white/10 px-4 py-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl border border-brand-gold/60 flex items-center justify-center bg-black shadow-md shadow-brand-gold/20">
+          <span class="text-brand-gold font-black text-sm tracking-tighter">X°</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <h1 class="text-base font-black tracking-wide text-white leading-none">NEXO <span class="text-brand-gold">PÁDEL</span></h1>
+            <span class="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-brand-volt/10 text-brand-volt border border-brand-volt/30">MLP BRONCE</span>
+          </div>
+          <p class="text-[10px] text-gray-400 font-medium flex items-center gap-1 mt-0.5">
+            <i class="fa-solid fa-location-dot text-brand-gold text-[9px]"></i>
+            Sede: Ludipadel Gijón
+          </p>
+        </div>
+      </div>
+
+      <a href="https://instagram.com/explore/tags/nexopadel" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/5 border border-brand-gold/40 text-brand-gold text-[11px] font-bold active:scale-95 transition">
+        <i class="fa-brands fa-instagram text-sm"></i>
+        <span>#Nexopadel</span>
+      </a>
+    </div>
+
+    <!-- PESTAÑAS PRINCIPALES INTERACTIVAS -->
+    <div class="mt-3 flex items-center p-1 bg-[#1a1a1a] border border-white/5 rounded-xl gap-1 max-w-md mx-auto">
+      <button onclick="switchTab('jornada')" id="tab-btn-jornada" class="tab-btn active flex-1 py-1.5 text-xs rounded-lg transition text-center font-bold">
+        Jornada 1
+      </button>
+      <button onclick="switchTab('calendario')" id="tab-btn-calendario" class="tab-btn flex-1 py-1.5 text-xs rounded-lg transition text-gray-400 text-center font-medium">
+        Calendario (9J)
+      </button>
+      <button onclick="switchTab('plantilla')" id="tab-btn-plantilla" class="tab-btn flex-1 py-1.5 text-xs rounded-lg transition text-gray-400 text-center font-medium">
+        Plantilla (11)
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="w-full px-4 pt-4 flex-1 flex flex-col gap-5 max-w-md mx-auto">
+
+    <!-- SECCIÓN: JORNADA 1 -->
+    <div id="tab-jornada" class="flex flex-col gap-4">
+
+      <div class="p-4 rounded-2xl bg-gradient-to-br from-[#1a1919] to-[#121212] border border-brand-gold/20 shadow-xl">
+        <div class="flex items-center justify-between mb-2">
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-yellow-500/10 text-brand-gold border border-brand-gold/30">
+            <i class="fa-solid fa-flag-checkered text-[9px]"></i> RESULTADO OFICIAL J1
+          </span>
+          <span class="text-[10px] font-extrabold text-brand-volt">LIGA MLP BRONCE</span>
+        </div>
+        <h2 class="text-2xl font-black uppercase tracking-tight text-white leading-tight">
+          DEBUT OFICIAL <span class="gold-text-gradient">NEXO PÁDEL</span>
+        </h2>
+        <p class="text-xs text-gray-400 mt-1 leading-relaxed">
+          Resultado final en la Liga Asturiana como visitante frente a <strong class="text-gray-200">Only Pádel</strong>.
+        </p>
+
+        <div class="grid grid-cols-4 gap-2 mt-4">
+          <div class="p-2 rounded-xl bg-black/50 border border-white/5 text-center">
+            <div class="text-lg font-black text-brand-gold leading-none">11</div>
+            <div class="text-[9px] font-semibold text-gray-400 uppercase mt-1">Jugad.</div>
+          </div>
+          <div class="p-2 rounded-xl bg-black/50 border border-white/5 text-center">
+            <div class="text-lg font-black text-brand-volt leading-none">J1</div>
+            <div class="text-[9px] font-semibold text-gray-400 uppercase mt-1">Jugada</div>
+          </div>
+          <div class="p-2 rounded-xl bg-black/50 border border-white/5 text-center">
+            <div class="text-lg font-black text-white leading-none">9</div>
+            <div class="text-[9px] font-semibold text-gray-400 uppercase mt-1">Jornadas</div>
+          </div>
+          <div class="p-2 rounded-xl bg-black/50 border border-white/5 text-center">
+            <div class="text-lg font-black text-brand-gold leading-none">2</div>
+            <div class="text-[9px] font-semibold text-gray-400 uppercase mt-1">Capit.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCH CARD J1: RESULTADO OFICIAL (ONLY PÁDEL 2 - 1 NEXO PÁDEL) -->
+      <section class="rounded-2xl bg-brand-card border border-brand-gold/40 p-4 shadow-xl">
+        <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2 h-2 rounded-full bg-amber-400"></span>
+            <span class="text-xs font-bold text-white uppercase tracking-wider">Jornada 1 · Liga MLP</span>
+          </div>
+          <span class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-amber-400/10 text-amber-400 border border-amber-400/30 uppercase">
+            Finalizado
+          </span>
+        </div>
+
+        <!-- MARCADOR GLOBAL 2 - 1 -->
+        <div class="flex items-center justify-between py-4 text-center">
+          <!-- LOCAL: ONLY PÁDEL -->
+          <div class="flex-1 flex flex-col items-center">
+            <div class="w-12 h-12 rounded-xl bg-[#222] border border-gray-700 flex items-center justify-center mb-1.5">
+              <span class="text-gray-300 font-black text-lg">OP</span>
+            </div>
+            <span class="text-xs font-bold text-gray-200 leading-tight">Only Pádel</span>
+            <span class="text-[9px] text-gray-400 font-semibold uppercase mt-0.5">Local</span>
+          </div>
+
+          <!-- RESULTADO CENTRAL -->
+          <div class="flex flex-col items-center px-3">
+            <div class="flex items-center gap-2 bg-black/80 px-4 py-2 rounded-2xl border border-white/10 shadow-inner">
+              <span class="text-3xl font-black text-white leading-none">2</span>
+              <span class="text-lg font-black text-gray-500 leading-none">-</span>
+              <span class="text-3xl font-black text-brand-gold leading-none">1</span>
+            </div>
+            <span class="text-[10px] font-bold text-gray-400 uppercase mt-1.5">26/09/26 · 17:30h</span>
+            <div class="mt-1 px-2.5 py-0.5 rounded-full bg-black/60 border border-gray-700 text-[10px] text-gray-300 flex items-center gap-1">
+              <i class="fa-solid fa-map-pin text-brand-gold text-[9px]"></i>
+              <span>Onlypadel</span>
+            </div>
+          </div>
+
+          <!-- VISITANTE: NEXO PÁDEL -->
+          <div class="flex-1 flex flex-col items-center">
+            <div class="w-12 h-12 rounded-xl bg-black border border-brand-gold flex items-center justify-center shadow-lg shadow-brand-gold/20 mb-1.5">
+              <span class="text-brand-gold font-black text-lg">NX</span>
+            </div>
+            <span class="text-xs font-bold text-white leading-tight">Nexo Pádel</span>
+            <span class="text-[9px] text-brand-gold font-semibold uppercase mt-0.5">Visitante</span>
+          </div>
+        </div>
+
+        <!-- ENLACE GPS J1 -->
+        <a href="https://maps.google.com/?q=Onlypadel+Gijon" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-yellow-500/10 to-amber-500/10 hover:from-yellow-500/20 hover:to-amber-500/20 border border-brand-gold/40 flex items-center justify-between text-xs font-bold text-brand-gold transition active:scale-98">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-brand-gold"></i>
+            <span>Sede Encuentro: Onlypadel Gijón</span>
+          </div>
+          <span class="text-[11px] underline">Abrir GPS →</span>
+        </a>
+
+        <!-- DESGLOSE OFICIAL DE PARTIDOS POR PAREJAS -->
+        <div class="mt-4 pt-4 border-t border-gray-800">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-[11px] font-extrabold uppercase tracking-wider text-gray-300">Desglose de Partidos J1</h4>
+            <span class="text-[9px] font-bold text-brand-gold">3 Puntos en Juego</span>
+          </div>
+
+          <div class="flex flex-col gap-2.5">
+            <!-- PAREJA 1: MIXTO (7-5 | 6-4 Derrota) -->
+            <div class="p-3 rounded-xl bg-black/60 border border-red-500/20 flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-lg bg-white/5 text-gray-300 font-black flex items-center justify-center text-[10px]">P1</span>
+                  <span class="text-[10px] font-extrabold uppercase tracking-wider text-gray-400">Mixto</span>
+                </div>
+                <span class="text-[9px] font-extrabold px-2 py-0.5 rounded bg-red-500/15 text-red-400 border border-red-500/30 uppercase">
+                  Derrota
+                </span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-white block">Eva Ordóñez Díaz & Pablo Coya Montes</span>
+                  <span class="text-[10px] text-gray-400">Eva (Revés) · Pablo Coya (Revés)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-black text-red-400 tracking-wider font-mono">7-5 | 6-4</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAREJA 2: FEMENINO (4-6 | 2-6 Victoria) -->
+            <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/30 flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-lg bg-emerald-500/15 text-brand-volt font-black flex items-center justify-center text-[10px]">P2</span>
+                  <span class="text-[10px] font-extrabold uppercase tracking-wider text-brand-volt">Femenino</span>
+                </div>
+                <span class="text-[9px] font-extrabold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 uppercase flex items-center gap-1">
+                  <i class="fa-solid fa-check text-[8px]"></i> Victoria
+                </span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-white block">Sarah Abu-Albar Sánchez & Olaya Simon Gutierrez</span>
+                  <span class="text-[10px] text-gray-400">Sarah (Drive) · Olaya (Revés)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-black text-brand-volt tracking-wider font-mono">4-6 | 2-6</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAREJA 3: MASCULINO (4-6 | 2-6 | 4-6 Victoria) -->
+            <div class="p-3 rounded-xl bg-black/60 border border-brand-gold/40 flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-lg bg-brand-gold text-black font-black flex items-center justify-center text-[10px]">P3</span>
+                  <span class="text-[10px] font-extrabold uppercase tracking-wider text-brand-gold">Masculino</span>
+                </div>
+                <span class="text-[9px] font-extrabold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 uppercase flex items-center gap-1">
+                  <i class="fa-solid fa-check text-[8px]"></i> Victoria
+                </span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-white block">Adriel Crespo Pazos & Victor López Friera</span>
+                  <span class="text-[10px] text-brand-gold font-medium">Adriel (Drive · Capitán) · Victor López (Revés)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-black text-brand-gold tracking-wider font-mono">4-6 | 2-6 | 4-6</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPITANES OFICIALES -->
+      <section class="rounded-2xl bg-brand-card border border-white/10 p-3.5">
+        <h4 class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+          <i class="fa-solid fa-crown text-brand-gold text-xs"></i>
+          <span>Capitanía Oficial Nexo Pádel</span>
+        </h4>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 flex flex-col justify-between">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-8 h-8 rounded-full bg-brand-gold text-black font-black flex items-center justify-center text-xs">L</div>
+              <div>
+                <span class="text-xs font-bold text-white block">Lara</span>
+                <span class="text-[9px] text-gray-400">Especialista Drive</span>
+              </div>
+            </div>
+            <span class="text-[8px] font-extrabold px-1.5 py-0.5 rounded bg-brand-gold text-black uppercase text-center">Capitana Oficial</span>
+          </div>
+
+          <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 flex flex-col justify-between">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-8 h-8 rounded-full bg-brand-gold text-black font-black flex items-center justify-center text-xs">A</div>
+              <div>
+                <span class="text-xs font-bold text-white block">Adriel</span>
+                <span class="text-[9px] text-gray-400">Especialista Drive</span>
+              </div>
+            </div>
+            <span class="text-[8px] font-extrabold px-1.5 py-0.5 rounded bg-brand-gold text-black uppercase text-center">Capitán Oficial</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEDE OFICIAL CLUB -->
+      <section class="p-3.5 rounded-2xl bg-brand-card border border-white/10 flex flex-col gap-2.5">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold text-base shrink-0">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div>
+            <span class="text-[9px] font-extrabold text-brand-gold uppercase tracking-widest block">Sede Oficial Club</span>
+            <h4 class="text-xs font-bold text-white">Ludipadel Gijón</h4>
+            <p class="text-[10px] text-gray-400">Calle Max Planck 440, Polígono de Porceyo, 33211 Gijón</p>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Ludipadel+Gijon" target="_blank" rel="noopener noreferrer" class="w-full py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-center text-[11px] font-bold text-white uppercase tracking-wider flex items-center justify-center gap-2 transition active:scale-98">
+          <i class="fa-solid fa-diamond-turn-right text-brand-gold"></i>
+          <span>Abrir Ludipadel en Google Maps</span>
+        </a>
+      </section>
+
+    </div>
+
+    <!-- SECCIÓN: CALENDARIO COMPLETO (9 JORNADAS) -->
+    <div id="tab-calendario" class="hidden flex flex-col gap-3">
+      <div class="flex items-center justify-between pb-2 border-b border-gray-800">
+        <div>
+          <h3 class="text-sm font-bold text-white">Calendario Oficial Liga MLP</h3>
+          <p class="text-[10px] text-gray-400">9 Jornadas · Sedes con acceso GPS directo</p>
+        </div>
+        <span class="text-[9px] font-bold text-brand-gold px-2 py-0.5 rounded bg-brand-gold/10 border border-brand-gold/30">
+          Sede local: Ludipadel
+        </span>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <!-- J1: ONLY PÁDEL (LOCAL) vs NEXO PÁDEL (VISITANTE) -> FINALIZADO 2-1 -->
+        <div class="p-3 rounded-xl bg-brand-card border border-brand-gold/40 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-brand-gold text-black font-extrabold flex items-center justify-center text-xs">J1</span>
+            <div>
+              <div class="text-xs font-bold text-white flex items-center gap-1.5">
+                <span>Only Pádel 2 - 1 Nexo Pádel</span>
+              </div>
+              <div class="text-[10px] text-gray-400">26/09/26 · Finalizado · Onlypadel Gijón</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-amber-400/15 text-amber-400 border border-amber-400/30">Finalizado</span>
+            <a href="https://maps.google.com/?q=Onlypadel+Gijon" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-brand-gold/10 border border-brand-gold/40 text-[10px] font-bold text-brand-gold hover:bg-brand-gold hover:text-black transition flex items-center gap-1">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>GPS</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- J2: LUDIPADEL GIJÓN -->
+        <div class="p-3 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-white/10 text-gray-300 font-bold flex items-center justify-center text-xs">J2</span>
+            <div>
+              <div class="text-xs font-bold text-white">Nexo Pádel vs Los Futxeros</div>
+              <div class="text-[10px] text-gray-400">10/10/26 · 13:00h · Ludipadel Gijón</div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Ludipadel+Gijon" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-[10px] font-medium text-gray-400 hover:text-white transition flex items-center gap-1">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>GPS</span>
+          </a>
+        </div>
+
+        <!-- J3: CLUB P3 -->
+        <div class="p-3 rounded-xl bg-brand-card border border-brand-gold/30 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-brand-gold text-black font-extrabold flex items-center justify-center text-xs">J3</span>
+            <div>
+              <div class="text-xs font-bold text-white">ReP3lotudos vs Nexo Pádel</div>
+              <div class="text-[10px] text-brand-gold font-semibold">25/10/26 · 18:30h · Club P3</div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Club+P3+Gijon" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-brand-gold/15 border border-brand-gold/50 text-[10px] font-bold text-brand-gold hover:bg-brand-gold hover:text-black transition flex items-center gap-1">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>GPS P3</span>
+          </a>
+        </div>
+
+        <!-- J4: LUDIPADEL GIJÓN -->
+        <div class="p-3 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-white/10 text-gray-300 font-bold flex items-center justify-center text-xs">J4</span>
+            <div>
+              <div class="text-xs font-bold text-white">Nexo Pádel vs Padelrock</div>
+              <div class="text-[10px] text-gray-400">07/11/26 · 13:00h · Ludipadel Gijón</div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Ludipadel+Gijon" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-[10px] font-medium text-gray-400 hover:text-white transition flex items-center gap-1">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>GPS</span>
+          </a>
+        </div>
+
+        <!-- J5: DESCANSO -->
+        <div class="p-3 rounded-xl bg-yellow-500/5 border border-yellow-500/20 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-yellow-500/20 text-brand-gold font-bold flex items-center justify-center text-xs">J5</span>
+            <div>
+              <div class="text-xs font-bold text-brand-gold">Jornada de Descanso</div>
+              <div class="text-[10px] text-gray-400">20/11/26 · Descanso oficial de liga</div>
+            </div>
+          </div>
+          <span class="text-[9px] font-bold px-2 py-0.5 rounded bg-yellow-500/10 text-brand-gold">Descanso</span>
+        </div>
+
+        <!-- J6: CLUB FUTSA MERES -->
+        <div class="p-3 rounded-xl bg-brand-card border border-brand-gold/30 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-brand-gold text-black font-extrabold flex items-center justify-center text-xs">J6</span>
+            <div>
+              <div class="text-xs font-bold text-white">MLP Los Pitufos vs Nexo Pádel</div>
+              <div class="text-[10px] text-brand-gold font-semibold">19/12/26 · 13:00h · Club Futsa Meres</div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Futsa+Meres" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-brand-gold/15 border border-brand-gold/50 text-[10px] font-bold text-brand-gold hover:bg-brand-gold hover:text-black transition flex items-center gap-1">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>GPS Meres</span>
+          </a>
+        </div>
+
+        <!-- J7: LUDIPADEL GIJÓN -->
+        <div class="p-3 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-white/10 text-gray-300 font-bold flex items-center justify-center text-xs">J7</span>
+            <div>
+              <div class="text-xs font-bold text-white">Nexo Pádel vs La Y Pádel Team</div>
+              <div class="text-[10px] text-gray-400">16/01/26 · 13:00h · Ludipadel Gijón</div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Ludipadel+Gijon" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-[10px] font-medium text-gray-400 hover:text-white transition flex items-center gap-1">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>GPS</span>
+          </a>
+        </div>
+
+        <!-- J8: PÁDEL OVIEDO -->
+        <div class="p-3 rounded-xl bg-brand-card border border-brand-gold/30 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-brand-gold text-black font-extrabold flex items-center justify-center text-xs">J8</span>
+            <div>
+              <div class="text-xs font-bold text-white">Pádel Ranger vs Nexo Pádel</div>
+              <div class="text-[10px] text-brand-gold font-semibold">29/01/26 · 20:00h · Pádel Oviedo</div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Padel+Oviedo" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-brand-gold/15 border border-brand-gold/50 text-[10px] font-bold text-brand-gold hover:bg-brand-gold hover:text-black transition flex items-center gap-1">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>GPS Oviedo</span>
+          </a>
+        </div>
+
+        <!-- J9: LUDIPADEL GIJÓN -->
+        <div class="p-3 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-white/10 text-gray-300 font-bold flex items-center justify-center text-xs">J9</span>
+            <div>
+              <div class="text-xs font-bold text-white">Nexo vs Los Vibiradores</div>
+              <div class="text-[10px] text-gray-400">13/02/26 · 13:00h · Ludipadel Gijón</div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Ludipadel+Gijon" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-[10px] font-medium text-gray-400 hover:text-white transition flex items-center gap-1">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>GPS</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN: PLANTILLA COMPLETA (11 JUGADORES) -->
+    <div id="tab-plantilla" class="hidden flex flex-col gap-3">
+      <div class="flex items-center justify-between pb-2 border-b border-gray-800">
+        <div>
+          <h3 class="text-sm font-bold text-white">Plantilla Oficial Nexo Pádel</h3>
+          <p class="text-[10px] text-gray-400">11 fichas oficiales inscritas</p>
+        </div>
+        <span class="text-[9px] font-bold text-brand-gold px-2 py-0.5 rounded bg-brand-gold/10">11 Jugadores</span>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <div class="p-2.5 rounded-xl bg-brand-card border border-brand-gold/40 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-brand-gold text-black font-extrabold flex items-center justify-center text-xs">L</div>
+            <div>
+              <div class="text-xs font-bold text-white">Lara</div>
+              <div class="text-[10px] text-gray-400">Posición: Drive</div>
+            </div>
+          </div>
+          <span class="text-[9px] font-extrabold px-2 py-0.5 rounded bg-brand-gold text-black uppercase">Capitana</span>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-brand-card border border-brand-gold/40 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-brand-gold text-black font-extrabold flex items-center justify-center text-xs">A</div>
+            <div>
+              <div class="text-xs font-bold text-white">Adriel Crespo Pazos</div>
+              <div class="text-[10px] text-gray-400">Posición: Drive · Pareja Masculina J1</div>
+            </div>
+          </div>
+          <span class="text-[9px] font-extrabold px-2 py-0.5 rounded bg-brand-gold text-black uppercase">Capitán</span>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-white/10 text-white font-bold flex items-center justify-center text-xs">J</div>
+            <div>
+              <div class="text-xs font-bold text-white">Jorge</div>
+              <div class="text-[10px] text-gray-400">Posición: Revés</div>
+            </div>
+          </div>
+          <span class="text-[9px] text-gray-400 font-semibold">Jugador</span>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-white/10 text-white font-bold flex items-center justify-center text-xs">A</div>
+            <div>
+              <div class="text-xs font-bold text-white">Ale</div>
+              <div class="text-[10px] text-gray-400">Posición: Drive</div>
+            </div>
+          </div>
+          <span class="text-[9px] text-gray-400 font-semibold">Jugador</span>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-black/40 border border-brand-volt/30 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-white/10 text-brand-volt font-bold flex items-center justify-center text-xs">V</div>
+            <div>
+              <div class="text-xs font-bold text-white">Victor López Friera (Viti)</div>
+              <div class="text-[10px] text-gray-400">Posición: Revés · Pareja Masculina J1</div>
+            </div>
+          </div>
+          <span class="text-[9px] text-brand-volt font-bold">Titular J1</span>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-black/40 border border-brand-volt/30 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-white/10 text-brand-volt font-bold flex items-center justify-center text-xs">C</div>
+            <div>
+              <div class="text-xs font-bold text-white">Pablo Coya Montes</div>
+              <div class="text-[10px] text-gray-400">Posición: Revés · Pareja Mixta J1</div>
+            </div>
+          </div>
+          <span class="text-[9px] text-brand-volt font-bold">Titular J1</span>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-white/10 text-white font-bold flex items-center justify-center text-xs">J</div>
+            <div>
+              <div class="text-xs font-bold text-white">Javi</div>
+              <div class="text-[10px] text-gray-400">Posición: Drive</div>
+            </div>
+          </div>
+          <span class="text-[9px] text-gray-400 font-semibold">Jugador</span>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-black/40 border border-brand-volt/30 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-white/10 text-brand-volt font-bold flex items-center justify-center text-xs">O</div>
+            <div>
+              <div class="text-xs font-bold text-white">Olaya Simon Gutierrez</div>
+              <div class="text-[10px] text-gray-400">Posición: Revés · Pareja Femenina J1</div>
+            </div>
+          </div>
+          <span class="text-[9px] text-brand-volt font-bold">Titular J1</span>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-white/10 text-white font-bold flex items-center justify-center text-xs">L</div>
+            <div>
+              <div class="text-xs font-bold text-white">Luci</div>
+              <div class="text-[10px] text-gray-400">Posición: Drive</div>
+            </div>
+          </div>
+          <span class="text-[9px] text-gray-400 font-semibold">Jugadora</span>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-black/40 border border-brand-volt/30 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-white/10 text-brand-volt font-bold flex items-center justify-center text-xs">S</div>
+            <div>
+              <div class="text-xs font-bold text-white">Sarah Abu-Albar Sánchez</div>
+              <div class="text-[10px] text-gray-400">Posición: Drive · Pareja Femenina J1</div>
+            </div>
+          </div>
+          <span class="text-[9px] text-brand-volt font-bold">Titular J1</span>
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-black/40 border border-brand-volt/30 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-white/10 text-brand-volt font-bold flex items-center justify-center text-xs">E</div>
+            <div>
+              <div class="text-xs font-bold text-white">Eva Ordóñez Díaz</div>
+              <div class="text-[10px] text-gray-400">Posición: Revés · Pareja Mixta J1</div>
+            </div>
+          </div>
+          <span class="text-[9px] text-brand-volt font-bold">Titular J1</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- BOTÓN FLOTANTE PERMANENTE DE WHATSAPP -->
+  <a href="https://wa.me/34636027584?text=Hola%20Nexo%20P%C3%A1del!" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 right-4 z-50 flex items-center gap-2 px-3.5 py-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs rounded-full shadow-2xl shadow-green-500/40 hover:scale-105 active:scale-95 transition-all duration-200 border border-white/20">
+    <span class="relative flex h-2.5 w-2.5">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+    </span>
+    <i class="fa-brands fa-whatsapp text-lg"></i>
+    <span>WhatsApp</span>
+  </a>
+
+  <!-- BARRA DE NAVEGACIÓN INFERIOR NATIVA -->
+  <nav class="fixed bottom-0 left-0 right-0 z-40 bg-[#121212]/95 backdrop-blur-lg border-t border-white/10 py-2 px-3">
+    <div class="max-w-md mx-auto flex items-center justify-around">
+      <button onclick="switchTab('jornada')" id="nav-btn-jornada" class="nav-item active flex flex-col items-center gap-1 text-[10px] font-bold transition">
+        <i class="fa-solid fa-trophy text-sm"></i>
+        <span>Jornada 1</span>
+      </button>
+
+      <button onclick="switchTab('calendario')" id="nav-btn-calendario" class="nav-item text-gray-400 flex flex-col items-center gap-1 text-[10px] font-medium transition hover:text-white">
+        <i class="fa-regular fa-calendar-days text-sm"></i>
+        <span>Calendario</span>
+      </button>
+
+      <button onclick="switchTab('plantilla')" id="nav-btn-plantilla" class="nav-item text-gray-400 flex flex-col items-center gap-1 text-[10px] font-medium transition hover:text-white">
+        <i class="fa-solid fa-users text-sm"></i>
+        <span>Plantilla</span>
+      </button>
+
+      <a href="https://wa.me/34636027584?text=Hola%20Nexo%20P%C3%A1del!" target="_blank" rel="noopener noreferrer" class="nav-item text-gray-400 flex flex-col items-center gap-1 text-[10px] font-medium transition hover:text-white">
+        <i class="fa-solid fa-headset text-sm"></i>
+        <span>Contacto</span>
+      </a>
+    </div>
+  </nav>
+
+  <script>
+    function switchTab(tabName) {
+      document.getElementById('tab-jornada').classList.add('hidden');
+      document.getElementById('tab-calendario').classList.add('hidden');
+      document.getElementById('tab-plantilla').classList.add('hidden');
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('active', 'text-black', 'bg-brand-gold', 'font-bold');
+        btn.classList.add('text-gray-400', 'font-medium');
+      });
+
+      const navButtons = document.querySelectorAll('.nav-item');
+      navButtons.forEach(btn => {
+        btn.classList.remove('active', 'text-brand-gold', 'font-bold');
+        btn.classList.add('text-gray-400', 'font-medium');
+      });
+
+      const activeTab = document.getElementById('tab-' + tabName);
+      if (activeTab) {
+        activeTab.classList.remove('hidden');
+      }
+
+      const activeBtn = document.getElementById('tab-btn-' + tabName);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-gray-400', 'font-medium');
+        activeBtn.classList.add('active');
+      }
+
+      const activeNavBtn = document.getElementById('nav-btn-' + tabName);
+      if (activeNavBtn) {
+        activeNavBtn.classList.remove('text-gray-400', 'font-medium');
+        activeNavBtn.classList.add('active', 'text-brand-gold', 'font-bold');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
